@@ -3,3 +3,7 @@
     color: white;
     font-family: 'Noto Sans JP', sans-serifS;
 }
+.picture {
+    text-align: center;
+    margin: 20px 0;
+}
