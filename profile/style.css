@@ -4,6 +4,12 @@
     font-family: 'Noto Sans JP', sans-serifS;
 }
 
+.subtitle {
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+    margin: 100px auto 0 auto;
+    font-size: 2rem;
+}
 
 .picture {
     text-align: center;
@@ -27,4 +33,126 @@
     margin-left: 30px;
     transform: translate(-100px, 0);
     list-style: none;
+}
+
+.slider-container {
+    margin: 150px auto 0 auto; /* 上に80pxの余白を追加 */
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #454545;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    border: 5px solid lightgray;
+}
+
+/* 画像コンテナ */
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+img.image-active {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.picture img {
+    position: static;
+    opacity: 1;
+    width: 1000px;
+    height: 500px;
+    object-fit: contain;
+    transition: none;
+}
+
+
+.nav-container {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.nav-btn {
+    height: 18px;
+    width: 18px;
+    margin: 8px;
+    background: linear-gradient(135deg, #0d7df5 60%, #6dd5fa 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(13,125,245,0.15);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.nav-btn.btn-active {
+    background: linear-gradient(135deg, #f99f3e 60%, #f7b733 100%);
+    transform: scale(1.2);
+    box-shadow: 0 4px 16px rgba(249,159,62,0.25);
+}
+
+.nav-btn:hover {
+    box-shadow: 0 0 8px 3px #fff, 0 2px 8px rgba(13,125,245,0.25);
+    transform: scale(1.1);
+}
+
+.slider-container .image-container img[alt="futto ball"] {
+    object-position: 0 -95px;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: #fff;
+    border: none;
+    font-size: 2rem;
+    color: #3498db;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.15);
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    opacity: 0.8;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.arrow-btn:hover {
+    background: #3498db;
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
 }
